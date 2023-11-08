@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 const productSchema = new Schema({
     name: {
         type: String,
-        require: true
+        required: true
     },
     description: {
         type: String,
@@ -11,12 +11,12 @@ const productSchema = new Schema({
     },
     price: {
         type: Number,
-        require: true
+        required: true
     },
     category: [{
         type: Schema.Types.ObjectId,
         ref: 'Category',
-        require: true
+        required: true
     }],
     byPrescription: {
         type: Boolean,

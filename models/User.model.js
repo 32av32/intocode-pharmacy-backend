@@ -4,11 +4,11 @@ const Cart = require("../models/Cart.model");
 const userSchema = new Schema({
     name: {
         type: String,
-        require: true
+        required: true
     },
     email: {
         type: String,
-        require: true,
+        required: true,
         unique: true
     },
     cash: {
