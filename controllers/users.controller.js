@@ -6,7 +6,10 @@ const Product = require('../models/Product.model')
 module.exports.usersController = {
     getUser: async (req, res) => {
         try {
-            res.json(await User.findById(req.params.id))
+            const user = await User.findById(req.params.id)
+            const cart = await Cart.findOne({user: user._id})
+
+            res.json({user, cart})
         } catch (err) {
             res.json(err)
         }
